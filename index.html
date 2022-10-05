@@ -6,19 +6,90 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="./src/favicons/favicon-16x16.png" type="image/x-icon">
   <link rel="stylesheet" href="./src/css/index.css">
-  <title>IP Tracker</title>
-</head>
+   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+   integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+   crossorigin=""/>
+  
+   <title>IP Tracker</title>
+  </head>
 <body>
+  <header>
+    <h2>Pesquisar Geolocalização por IP</h2>
+  </header>
   <main>
-    <div class="container">
-      <h2 class="ip-display">IPv4 Address: -</h2>
-      <h2 class="ipv6-display">IPv6 Address: -</h2>
-      <h2 class="location-display">Location: -</h2>
-      <button class="get-btn">Get IP</button>
-    </div>
-  </main>
+    <div class="wrapper">
+    <div class="form">
+      <form>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js" integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="./src/js/main.js"></script>
+        <input 
+        type="text"
+        placeholder="IP ou Dominio"
+        >
+        <div class="btns">
+          <button type="submit" id="ipBtn">Pesquisar</button>
+          <button>Pegar seu IP</button>
+        </div>
+      </form>
+    </div>
+    <div class="container">
+      <div class="ip_information">
+        <table>
+          <thead><h2>Suas Informações</h2></thead>
+          
+          <tbody>
+            <tr>
+              <td>IP: </td>
+              <th class="ipdisplay"> - </th>
+            </tr>
+
+            <tr>
+              <td>Dominio: </td>
+              <th class="domian-display"> - </th>
+          </tr>
+
+          <tr>
+          <td>Cidade: </td>
+          <th class="city-display"> - </th> 
+          </tr>
+
+          <tr>
+          <td>Estado / Provincia:</td>
+          <th class="state-display"> - </th>
+          </tr>
+
+          <tr>
+          <td>Pais: </td>
+          <th class="country-display"> - </th>
+          </tr>
+
+          <tr>
+            <td>UTC: </td> 
+            <th class="utc-display"> - </th>
+          </tr>
+          
+          <tr>
+            <td>Latitude: </td> 
+            <th class="lat-display"> - </th>
+          </tr>
+          
+          <tr>
+            <td>Longitude: </td> 
+            <th class="log-display"> - </th>
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+    <div id="map"></div>
+  </div>
+</div>
+</main>
+  
+  <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+   integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+   crossorigin=""></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js" integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A==" 
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script type="module" src="./src/js/main.js"></script>
 </body>
 </html>
